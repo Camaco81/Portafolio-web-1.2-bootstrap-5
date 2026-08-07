@@ -28,24 +28,44 @@
             });
         }
 
-        // Contact form handling
+        // Contact form handling (EmailJS)
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const btn = e.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Enviando...';
+            const btnText = btn.querySelector('span');
+            const originalText = btnText.textContent;
+            const isEs = typeof currentLang === 'undefined' || currentLang === 'es';
+            
+            btnText.textContent = isEs ? 'Enviando...' : 'Sending...';
             btn.disabled = true;
             
-            // Simulate form submission (replace with actual EmailJS implementation)
-            setTimeout(() => {
-                btn.innerHTML = '<i class="bi bi-check-circle"></i> ¡Enviado!';
+            if (typeof emailjs === 'undefined') {
+                btnText.textContent = 'Error';
                 setTimeout(() => {
-                    btn.innerHTML = originalText;
+                    btnText.textContent = originalText;
                     btn.disabled = false;
-                    e.target.reset();
-                }, 2000);
-            }, 2000);
+                }, 3000);
+                return;
+            }
+            
+            emailjs.sendForm('default_service', 'template_qfa4c2d', this)
+                .then(() => {
+                    btnText.textContent = isEs ? '¡Enviado!' : 'Sent!';
+                    setTimeout(() => {
+                        btnText.textContent = originalText;
+                        btn.disabled = false;
+                        e.target.reset();
+                    }, 2500);
+                })
+                .catch((err) => {
+                    console.error('EmailJS error:', err);
+                    btnText.textContent = 'Error';
+                    setTimeout(() => {
+                        btnText.textContent = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                });
         });
 
         // Initialize everything when DOM is loaded

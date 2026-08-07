@@ -7,12 +7,16 @@ const translations = {
         'view-projects-btn': 'Ver Proyectos',
         'skills-title': 'Tecnologías & Habilidades',
         'skills-subtitle': 'Stack tecnológico completo para desarrollo web moderno',
+        'skills-frontend-title': 'Frontend',
+        'skills-backend-title': 'Backend',
+        'skills-database-title': 'Bases de Datos y Herramientas',
+        'skills-ai-title': 'IA & Herramientas',
         'experience-title': 'Experiencia',
         'experience-subtitle': 'Mi trayectoria profesional en el desarrollo web',
-        'current': '2024 - Actualidad',
+        'current': 'Nov 2025 - Actualidad',
         'freelance-title': 'Desarrollador Fullstack Freelance',
         'freelance-company': 'Independiente',
-        'freelance-description': 'Desarrollo de aplicaciones web completas para clientes diversos, desde landing pages hasta sistemas de gestión empresarial. Especialización en Vue.js, Node.js y bases de datos relacionales.',
+        'freelance-description': 'Mejora y desarrollo de un software de gestión integral para proveedores de internet (ISP), con módulos de ventas, inventario y facturación. Desarrollo de aplicaciones web completas con Vue.js, Node.js y bases de datos relacionales.',
         'competition-title': 'Participante - Olimpiadas de Programación',
         'competition-company': 'Copa Nacional 2023',
         'competition-description': 'Desarrollo del proyecto JobSage, una plataforma web para búsqueda de empleo. Implementé funcionalidades de filtrado, búsqueda avanzada y panel administrativo.',
@@ -36,6 +40,10 @@ const translations = {
         'subject-label': 'Asunto',
         'message-label': 'Mensaje',
         'send-btn': 'Enviar Mensaje',
+        'name-placeholder': 'Tu nombre completo',
+        'email-placeholder': 'tu.email@ejemplo.com',
+        'subject-placeholder': '¿En qué puedo ayudarte?',
+        'message-placeholder': 'Cuéntame sobre tu proyecto...',
         'email-contact': 'Email',
         'location-contact': 'Ubicación',
         'location-text': 'Disponible para trabajo remoto',
@@ -43,12 +51,12 @@ const translations = {
         'availability-text': 'Lun - Vie: 9:00 AM - 6:00 PM',
         'footer-text': 'Fullstack Developer • Creando experiencias digitales excepcionales',
         // Traducciones de proyectos
-        'imc-calculator-title': 'Calculadora de IMC',
-        'imc-description': 'Aplicación web interactiva para calcular el Índice de Masa Corporal con validación en tiempo real y recomendaciones personalizadas según los resultados.',
+        'view-demo': 'Ver Demo',
+        'view-code': 'Código',
+        'sales-system-title': 'Sistema de Ventas y Gestión de Inventario',
+        'sales-system-description': 'Módulos de ventas, facturación y control de inventario para software de gestión integral de proveedores de internet (ISP). Optimización de procesos comerciales y trazabilidad de productos y servicios.',
         'portfolio-title': 'Sistema Multi-Gimnasio',
         'portfolio-description': 'Sistema Web para gestión de gimnasio, clientes, rutinas y más',
-        'money-converter-title': 'Conversor de Divisas',
-        'money-converter-description': 'Aplicación de conversión de divisas en tiempo real utilizando APIs externas. Interfaz intuitiva con historial de conversiones y múltiples monedas.',
         'jobsage-title': 'JobSage - Portal de Empleos',
         'jobsage-description': 'Plataforma completa de búsqueda de empleo desarrollada para competencia nacional. Sistema de filtros avanzados, perfiles de usuario y panel administrativo.',
         'protein-calculator-title': 'Calculadora Nutricional',
@@ -63,12 +71,16 @@ const translations = {
         'view-projects-btn': 'View Projects',
         'skills-title': 'Technologies & Skills',
         'skills-subtitle': 'Complete tech stack for modern web development',
+        'skills-frontend-title': 'Frontend',
+        'skills-backend-title': 'Backend',
+        'skills-database-title': 'Database & Tools',
+        'skills-ai-title': 'AI & Tools',
         'experience-title': 'Experience',
         'experience-subtitle': 'My professional journey in web development',
-        'current': '2024 - Present',
+        'current': 'Nov 2025 - Present',
         'freelance-title': 'Freelance Fullstack Developer',
         'freelance-company': 'Independent',
-        'freelance-description': 'Development of complete web applications for diverse clients, from landing pages to business management systems. Specialization in Vue.js, Node.js and relational databases.',
+        'freelance-description': 'Improvement and development of comprehensive management software for internet service providers (ISPs), including sales, inventory and billing modules. Development of complete web applications with Vue.js, Node.js and relational databases.',
         'competition-title': 'Participant - Programming Olympics',
         'competition-company': 'National Cup 2023',
         'competition-description': 'Development of the JobSage project, a web platform for job searching. I implemented filtering functionalities, advanced search and administrative panel.',
@@ -92,6 +104,10 @@ const translations = {
         'subject-label': 'Subject',
         'message-label': 'Message',
         'send-btn': 'Send Message',
+        'name-placeholder': 'Your full name',
+        'email-placeholder': 'your.email@example.com',
+        'subject-placeholder': 'How can I help you?',
+        'message-placeholder': 'Tell me about your project...',
         'email-contact': 'Email',
         'location-contact': 'Location',
         'location-text': 'Available for remote work',
@@ -99,12 +115,12 @@ const translations = {
         'availability-text': 'Mon - Fri: 9:00 AM - 6:00 PM',
         'footer-text': 'Fullstack Developer • Creating exceptional digital experiences',
         // Project translations
-        'imc-calculator-title': 'BMI Calculator',
-        'imc-description': 'Interactive web application to calculate Body Mass Index with real-time validation and personalized recommendations based on results.',
+        'view-demo': 'View Demo',
+        'view-code': 'Code',
+        'sales-system-title': 'Sales and Inventory Management System',
+        'sales-system-description': 'Sales, billing and inventory control modules for comprehensive management software for internet service providers (ISPs). Optimization of commercial processes and traceability of products and services.',
         'portfolio-title': 'Multi-Gym System',
         'portfolio-description': 'Web system for gym management, clients, routines and more',
-        'money-converter-title': 'Currency Converter',
-        'money-converter-description': 'Real-time currency conversion application using external APIs. Intuitive interface with conversion history and multiple currencies.',
         'jobsage-title': 'JobSage - Job Portal',
         'jobsage-description': 'Complete job search platform developed for national competition. Advanced filtering system, user profiles and administrative panel.',
         'protein-calculator-title': 'Nutritional Calculator',
@@ -119,6 +135,9 @@ let currentLang = 'es';
 
 function switchLanguage(lang) {
     currentLang = lang;
+    
+    document.documentElement.lang = lang;
+    localStorage.setItem('preferredLanguage', lang);
     
     // Update button states
     document.getElementById('lang-es').classList.toggle('active', lang === 'es');
@@ -145,6 +164,14 @@ function switchLanguage(lang) {
 // Event listeners for language buttons
 document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
 document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+
+// Restore saved language preference on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage && translations[savedLanguage]) {
+        switchLanguage(savedLanguage);
+    }
+});
 
 // Typewriter effect
 function typewriterEffect() {
